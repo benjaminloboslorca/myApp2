@@ -1,0 +1,79 @@
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Estilo para el contenedor principal */
+.login-container {
+  animation: fadeIn 0.5s ease-in-out; /* Aplica la animación */
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4; /* Color de fondo */
+}
+
+/* Resto de tus estilos CSS aquí */
+
+
+/* Estilo para el encabezado "Inicio de Sesión" */
+.login-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Espacio entre el encabezado y los campos de entrada */
+  text-align: center; /* Centra horizontalmente */
+}
+
+/* Estilo para los campos de entrada */
+ion-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+ion-item {
+  --highlight-color-focused: transparent; /* Evita el resaltado cuando se enfoca */
+}
+
+/* Estilo para los botones */
+.button-group {
+  display: flex;
+  flex-direction: column; /* Alinea los botones verticalmente */
+  align-items: center; /* Centra horizontalmente */
+}
+
+ion-button {
+  --background: #007bff; /* Color de fondo del botón */
+  --color: #fff; /* Color del texto del botón */
+  --border-radius: 5px; /* Radio del borde */
+  width: 100%; /* Ancho completo */
+  margin-top: 10px;
+  font-size: 16px; /* Tamaño de fuente */
+  text-align: center; /* Centra el texto horizontalmente */
+  position: relative; /* Permite ocultar el texto */
+}
+
+/* Estilo para el botón de registro */
+.register-button {
+  --background: #28a745; /* Color de fondo del botón de registro */
+}
+/* Estilo para el enlace "¿Olvidaste tu contraseña?" */
+.forgot-password {
+  margin-top: 20px; /* Aumenta el espacio en la parte superior para centrar */
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 14px;
+  color: #007bff; /* Color del enlace */
+  text-decoration: underline; /* Subrayado */
+  cursor: pointer;
+}
+
+

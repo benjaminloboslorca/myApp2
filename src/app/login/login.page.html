@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Iniciar Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<div class="login-container">
+  <ion-card>
+    <ion-card-content>
+      <!-- Agregar el encabezado "Inicio de Sesión" -->
+      <div class="login-header">Inicio de Sesión</div>
+      <form>
+        <ion-item class="form-group">
+          <ion-label position="floating">Usuario:</ion-label>
+          <ion-input type="text" id="username" name="username" required placeholder=""></ion-input>
+        </ion-item>
+        <ion-item class="form-group">
+          <ion-label position="floating">Contraseña:</ion-label>
+          <ion-input type="password" id="password" name="password" required placeholder=""></ion-input>
+        </ion-item>
+        <div class="button-group">
+          <ion-button expand="full" color="primary" (click)="onSubmit()">Ingresar</ion-button> <!-- Agrega (click) y llama a onSubmit() -->
+          <ion-button expand="full" class="register-button">Registrarse</ion-button>
+        </div>
+      </form>
+      <!-- Agregar el enlace "¿Olvidaste tu contraseña?" debajo de los botones -->
+      <div class="forgot-password">
+        <a href="/recuperar-contrasena" style="color: blue;">¿Olvidaste tu contraseña?</a>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>

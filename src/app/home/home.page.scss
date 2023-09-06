@@ -1,0 +1,35 @@
+/* Estilo para el contenedor principal */
+.welcome-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh;
+  background-color: #f4f4f4; /* Color de fondo */
+}
+
+/* Estilo para la card de bienvenida */
+.welcome-card {
+  width: 80%; /* Ancho de la card */
+  max-width: 400px; /* Ancho máximo de la card */
+  text-align: center; /* Centra el contenido horizontalmente */
+  opacity: 0; /* Configura la opacidad inicial en 0 */
+  transform: translateY(-20px); /* Configura la posición inicial */
+  animation: fadeIn 0.5s ease-in-out forwards; /* Aplica la animación */
+}
+
+/* Define la animación de "fade in" */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Agrega una clase para ocultar la ion-card */
+.hide-card {
+  display: none !important; /* Añade !important para asegurarte de que la clase se aplique */
+}

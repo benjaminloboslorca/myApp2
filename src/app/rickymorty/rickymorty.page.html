@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>API Rick y Morty</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label class="titulo">
+        Bienvenido {{ nombreUsuario }}
+      </ion-label>
+    </ion-list-header>
+    <ion-item class="item" *ngFor="let personaje of personajes" [routerLink]="['/perfil/' + personaje.id ]">
+      <ion-avatar aria-hidden="true" class="imagen" slot="start">
+        <img [src]="personaje.image" alt="">
+      </ion-avatar>
+      <ion-label>{{ personaje.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

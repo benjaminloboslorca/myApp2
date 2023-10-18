@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; // Importa el Router
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -7,16 +9,52 @@ import { Router } from '@angular/router'; // Importa el Router
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  formularioLogin: FormGroup;
+  errorMessage: string = '';
 
-  constructor(private router: Router) { } // Inyecta el Router en el constructor
-
-  ngOnInit() {
+  constructor(
+    public fb: FormBuilder,
+    private alertController: AlertController,
+    private router: Router
+  ) {
+    this.formularioLogin = this.fb.group({
+      'nombre': new FormControl('', Validators.required),
+      'contrasena': new FormControl('', Validators.required)
+    });
   }
 
-  onSubmit() {
-    // Agrega la lógica de autenticación aquí (validar usuario y contraseña)
-    // Si la autenticación es exitosa, redirige al usuario a la ruta "/home"
-    this.router.navigate(['/home']); // Reemplaza '/home' con la ruta real de tu página de inicio
+  ngOnInit() {}
+
+  async ingresar() {
+    const f = this.formularioLogin.value;
+
+    // Utiliza las mismas claves que se usaron para guardar los datos en registro.ts
+    const nombreUsuario = localStorage.getItem('username');
+    const contrasenaUsuario = localStorage.getItem('password'); // Utiliza la misma clave 'password'
+
+    if (this.formularioLogin.invalid) {
+      const alert = await this.alertController.create({
+        header: 'Mensaje',
+        message: 'Debes ingresar todos los datos',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+    } else if (nombreUsuario === f.nombre && contrasenaUsuario === f.contrasena) {
+      localStorage.setItem('authenticated', 'true');
+      this.router.navigate(['/home']);
+    } else {
+      const alert = await this.alertController.create({
+        header: 'Mensaje',
+        message: 'Datos incorrectos',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+    }
   }
 
+  redirectToRegistroPage() {
+    this.router.navigate(['/registro']);
+  }
 }

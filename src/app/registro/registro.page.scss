@@ -1,0 +1,52 @@
+/* Agrega tus estilos CSS aquí */
+
+/* Estilo para el contenedor principal */
+.login-container {
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  /* Estilo para el encabezado "Registro de Usuario" */
+  .login-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilo para los campos de entrada */
+  ion-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  ion-item {
+    --highlight-color-focused: transparent;
+  }
+  
+  /* Estilo para los botones */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  ion-button {
+    --background: #007bff;
+    --color: #fff;
+    --border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+  }
+ 
